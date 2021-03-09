@@ -25,16 +25,29 @@ body {
 }
 
 .intro {
+    margin-top: 75px;
     font-size: 24px;
     text-align: center;
 }
 
-#start {
+#startBtn {
     color:white;
     background-color: blue;
-    margin-left: 45%;
+    margin-left: 38%;
+    width: 150px;
+    height: 50px;
+    font-size: 24px;
+    border: black 1px solid;
+    margin-top: 25px;
 }
  
+#startBtn:hover {
+    background-color: rgb(25, 115, 250);
+}
+
+#startBtn:focus {
+    outline: 0;
+}
 
 
 

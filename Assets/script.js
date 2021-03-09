@@ -1,68 +1,94 @@
 
+
+// Questions and Answers
 var questions = [
 	{
-		question: "1. Which is not a JavaScript data type?",
-		answers: {
-			a: 'Number',
-			b: 'String',
-			c: 'Boolean'
-            d: 'Function'
-            e: 'Undefined'
-		},
-		correctAnswer: 'd'
+		q : "1. Which is not a primitive data type?",
+		a : ["Number","String", "Boolean", "Function", "Undefined"],
+		correctAnswer: "Function"
 	},
 	{
-		question: "2.  What function is used to change the background color?",
-		answers: {	
-			a: 'document.color.background = ""',
-			b: 'me.backColor = ""',
-			c: 'document.backgroundColor= ""'
-            d: 'document.body.style.backgroundColor = ""'
-            e: 'me.changeColor = """'
-		},
-		correctAnswer: 'd'
-	}
+		q : "2.  What function is used to change the background color?",
+		a : ['document.color.background = ""', 'me.backColor = ""', 'document.backgroundColor= ""', 'document.body.style.backgroundColor = ""', 'me.changeColor = """'],
+		correctAnswer: 'document.body.style.backgroundColor = ""'
+	},
     {
-        question: "3. What company developed the scripting language JavaScript?",
-		answers: {
-			a: 'Sun Microsystems',
-			b: 'Microsoft',
-			c: 'Apple'
-            d: 'Mozilla'
-            e: 'Netscape'
-		},
-		correctAnswer: 'e'
-    }
+        q : "3. What company developed the scripting language JavaScript?",
+		a : ["Sun Microsystems", "Microsoft", "Apple", "Mozilla", "Netscape"],
+		correctAnswer: "Netscape"
+    },
     {
-        question: "4. What method is used to join two or more strings?",
-		answers: {
-			a: 'CharAt()',
-			b: 'Concat()',
-			c: 'forEach()'
-            d: 'length()'
-            e: 'push()'
-		},
-		correctAnswer: 'b'
-    }
+        q : "4. What method is used to join two or more strings?",
+		a : ["CharAt()", "Concat()", "forEach()", "length()", "push()"],
+		correctAnswer: "Concat()"
+    },
     {
-        question: "5. What term is used to represent a non-existent or invalid value?",
-		answers: {
-			a: 'var',
-			b: 'Undefined',
-			c: 'Null'
-            d: 'Boolean'
-            e: 'inNAN'
-		},
-		correctAnswer: 'c'
+        q : "5. What term is used to represent a non-existent or invalid value?",
+		a : ["var", "Undefined", "Null", "Boolean", "isNAN"],
+		correctAnswer: "Null"
     }
 ];
 
 
 
 
-// start button on splash sceen
+// Click "Start Quiz" button to begin
+function startQuiz() {
+    console.log("I just got clicked");
+}
 
-// click button #start to begin timer and first question
+document.getElementById("startBtn").addEventListener("click", startQuiz)
+
+
+
+
+
+// If answer is correct, continue to next question
+// If answer is wrong, deduct timer
+var timer = 60;
+if (question[0].correctAnswer === "Function") {
+    // go to the next question function should run here
+} else {
+    var result = timer - 10;
+}
+console.log(result);
+
+if (question[1].correctAnswer === 'document.body.style.backgroundColor = ""') {
+    // go to the next question function should run here
+} else {
+    var result = timer - 10;
+}
+console.log(result);
+
+if (question[2].correctAnswer === "Netscape") {
+    // go to the next question function should run here
+} else {
+    var result = timer - 10;
+}
+console.log(result);
+
+if (question[3].correctAnswer === "Concat()") {
+    // go to the next question function should run here
+} else {
+    var result = timer - 10;
+}
+console.log(result);
+
+if (question[4].correctAnswer === "Null") {
+    // go to the next question function should run here
+} else {
+    var result = timer - 10;
+}
+console.log(result);
+
+
+
+
+
+
+
+
+
 
 
 
