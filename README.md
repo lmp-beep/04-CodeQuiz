@@ -94,12 +94,12 @@ What company developed the scripting language JavaScript?
  Microsoft
  Apple
  Mozilla
- <!-- Netscape -->
+ *Netscape*
 
 
 
 JavaScript can be combined with CSS and a markup language to create Dynamic HTML.
-<!-- true -->
+*true*
 false 
 
 
@@ -107,19 +107,19 @@ What function can I use to change the background color?
  document.color.background = ""
  me.backColor = ""
  document.backgroundColor= ""
- <!-- document.body.style.backgroundColor = "" -->
+ *document.body.style.backgroundColor = ""*
  me.changeColor = ""
 
 
-Was JavaScript traditionally a server-side scripting language or a client-side scripting language?
+Is JavaScript traditionally a server-side scripting language or a client-side scripting language?
  Server-side
- <!-- Client-side -->
+ *Client-side*
 
 
  When you combine JavaScript, XML, and a server side scripting language, you get a technology that allows JavaScript to communicate with the server. What is this technology called?
  Dynamic Hyper Text Markup Language
  Hypertext Preprocessor
- <!-- Asynchronous JavaScript and XML -->
+ *Asynchronous JavaScript and XML*
  C++
  Python
-# 04-CodeQuiz
+
