@@ -7,13 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
     <link rel="stylesheet" href="./Assets/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <div class="grid">
-        <div id="quiz">
-            <h1>Coding Quiz Challenge</h1>
 
+
+    <div class="container">
+        <div id="introContainer">
+            <h1>Coding Quiz Challenge</h1>
+    
             <p class="intro">
                 Answer the following questions within the time limit. 
                 <br>
@@ -21,26 +24,26 @@
                 <br>
                 Incorrect answers will take away points and time off the clock.
             </p>
+            
+            <div class="controls">
+                <button id="startBtn" class="startBtn btn">Start Quiz</button>
+            </div>
+        </div>
 
-            <button id="startBtn">
-                Start Quiz
-            </button>
- 
-            <p id="question"></p>
- 
-            <!-- <div class="buttons">
-                <button id="btn1" id="choice1"></button>
-                <button id="btn2" id="choice2"></button>
-                <button id="btn3" id="choice3"></button>
-                <button id="btn4" id="choice4"></button>
-                <button id="btn5" id="choice5"></button>
-            </div> -->
- 
-            
-            
+
+
+        <div id="questionContainer" class="hide">
+            <div id="question">Question</div>
+            <div id="answerButtons" class="buttonGrid">
+                <button class="btn">Answer1</button>
+                <button class="btn">Answer2</button>
+                <button class="btn">Answer3</button>
+                <button class="btn">Answer4</button>
+                <button class="btn">Answer5</button>
+            </div>
+            <div id="timer"></div>
         </div>
     </div>
-
 
     
 <script src="./Assets/script.js"></script>

@@ -3,28 +3,28 @@
 // Questions and Answers
 var questions = [
 	{
-		q : "1. Which is not a primitive data type?",
-		a : ["Number","String", "Boolean", "Function", "Undefined"],
-		correctAnswer: "Function"
+		question : "1. Which is not a primitive data type?",
+		answers : ["Number","String", "Boolean", "Element", "Undefined"],
+		correctAnswer: "Element"
 	},
 	{
-		q : "2.  What function is used to change the background color?",
-		a : ['document.color.background = ""', 'me.backColor = ""', 'document.backgroundColor= ""', 'document.body.style.backgroundColor = ""', 'me.changeColor = """'],
+		question : "2.  What function is used to change the background color?",
+		answers : ['document.color.background = ""', 'me.backColor = ""', 'document.backgroundColor= ""', 'document.body.style.backgroundColor = ""', 'me.changeColor = """'],
 		correctAnswer: 'document.body.style.backgroundColor = ""'
 	},
     {
-        q : "3. What company developed the scripting language JavaScript?",
-		a : ["Sun Microsystems", "Microsoft", "Apple", "Mozilla", "Netscape"],
+        question : "3. What company developed the scripting language JavaScript?",
+		answers : ["Sun Microsystems", "Microsoft", "Apple", "Mozilla", "Netscape"],
 		correctAnswer: "Netscape"
     },
     {
-        q : "4. What method is used to join two or more strings?",
-		a : ["CharAt()", "Concat()", "forEach()", "length()", "push()"],
+        question : "4. What method is used to join two or more strings?",
+		answers : ["CharAt()", "Concat()", "forEach()", "length()", "push()"],
 		correctAnswer: "Concat()"
     },
     {
-        q : "5. What term is used to represent a non-existent or invalid value?",
-		a : ["var", "Undefined", "Null", "Boolean", "isNAN"],
+        question : "5. What term is used to represent a non-existent or invalid value?",
+		answers : ["var", "Undefined", "Null", "Boolean", "isNAN"],
 		correctAnswer: "Null"
     }
 ];
@@ -32,12 +32,67 @@ var questions = [
 
 
 
+var score = 0
+var questionIndex = 0
+
+var startButton = document.getElementById("startBtn");
+var startButton = document.getElementById("introContainer");
+var questionContainerElement = document.getElementById("questionContainer");
+var questionElement = document.getElementById("question");
+var answerButtonsElement = document.getElementById("answerButtons");
+var timerEl = document.getElementById("timer");
+
+
+
+
 // Click "Start Quiz" button to begin
+startButton.addEventListener("click", startQuiz)
+
 function startQuiz() {
-    console.log("I just got clicked");
+    console.log("I just got clicked")
+	startButton.classList.add("hide")
+	currentQuestionIndex = 0
+	questionContainerElement.classList.remove("hide")
+	startTimer()
+	showQuestion()
 }
 
-document.getElementById("startBtn").addEventListener("click", startQuiz)
+function startTimer() {
+	var timeLeft = 30;
+	var timeInterval = setInterval(function () {
+		if (timeLeft > 0) {
+			timerEl.textContent = timeLeft;
+			timeLeft--;
+		} else {
+			timerEl.textContent = timeLeft;
+			clearInterval(timeInterval);
+			console.log('GameOver')
+			displayScore()
+		}
+	}, 1000);
+} 
+
+function showQuestion() {
+	questionElement.innerText = questions[0].question
+	// answerButtonsElement.innerText = questions[0].answers
+	questions.answers.forEach(answer => {
+		const button = document.createElement("button")
+		button.innerText = answers.text
+		button.classList.add("btn")
+	}) 
+	
+}
+
+function selectAnswer() {
+
+}
+
+function displayScore () {
+
+}
+
+
+
 
 
 
@@ -46,7 +101,7 @@ document.getElementById("startBtn").addEventListener("click", startQuiz)
 // If answer is correct, continue to next question
 // If answer is wrong, deduct timer
 var timer = 60;
-if (question[0].correctAnswer === "Function") {
+if (question[0].correctAnswer === "Element") {
     // go to the next question function should run here
 } else {
     var result = timer - 10;
