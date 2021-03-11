@@ -65,17 +65,34 @@ body.wrong {
     margin-top: 25px;
 }
 
-.controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
+
+
  
 #startBtn:hover {
     background-color: rgb(25, 115, 250);
 }
 
 #startBtn:focus {
+    outline: 0;
+}
+
+#nextBtn {
+    border-radius: 12px;
+    color:white;
+    background-color: blue;
+    width: 250px;
+    height: 50px;
+    font-size: 24px;
+    border: black 1px solid;
+    margin-top: 25px;
+}
+
+#nextBtn:hover {
+    background-color: rgb(25, 115, 250);
+}
+
+#nextBtn:focus {
     outline: 0;
 }
 
@@ -87,7 +104,11 @@ body.wrong {
 
 }
 
-
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* #score {
     color: black;

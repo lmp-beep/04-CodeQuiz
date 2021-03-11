@@ -5,29 +5,32 @@ var questions = [
 	{
 		question : "Which is not a primitive data type?",
 		answers : ["Number","String", "Element", "Undefined"],
-		correctAnswer: "Element"
+		correct: "Element"
 	},
 	{
 		question : "What function is used to change the background color?",
 		answers : ['document.color.background = ""', 'document.backgroundColor= ""', 'document.body.style.backgroundColor = ""', 'me.changeColor = """'],
-		correctAnswer: 'document.body.style.backgroundColor = ""'
+		correct: 'document.body.style.backgroundColor = ""'
 	},
     {
         question : "What company developed the scripting language JavaScript?",
 		answers : ["Microsoft", "Apple", "Mozilla", "Netscape"],
-		correctAnswer: "Netscape"
+		correct: "Netscape"
     },
     {
         question : "What method is used to join two or more strings?",
 		answers : ["Concat()", "forEach()", "length()", "push()"],
-		correctAnswer: "Concat()"
+		correct: "Concat()"
     },
     {
         question : "What term is used to represent a non-existent or invalid value?",
 		answers : ["var", "Undefined", "Null", "isNAN"],
-		correctAnswer: "Null"
+		correct: "Null"
     }
 ];
+
+
+
 
 
 
@@ -41,12 +44,17 @@ var questionContainerElement = document.getElementById("questionContainer");
 var questionElement = document.getElementById("question");
 var answerButtonsElement = document.getElementById("answerButtons");
 var timerEl = document.getElementById("timer");
+var nextButton = document.getElementById("nextBtn")
 
 
 
 
-// Click "Start Quiz" button to begin
 startButton.addEventListener("click", startQuiz)
+nextButton.addEventListener("click", () => {
+	questionIndex++
+	nextQuestion()
+})
+
 
 function startQuiz() {
     console.log("I just got clicked");
@@ -57,7 +65,6 @@ function startQuiz() {
 	totalCorrect = 0;
 	startTimer();
 	showQuestion();
-	resetAnswers();
 }
 
 
@@ -85,7 +92,7 @@ function showQuestion() {
     // answerButtonsElement.innerText = questions[0].answers
     currentQuestion.answers.forEach(function (answer, i){
         var button = document.createElement("button")
-        // adding the propety class and the value to tah element in our HTML
+        // adding the propety class and the value to the element in our HTML
         button.classList.add("class", "answer");
         // adding our value to the parameter createdd in this function called answer
         // we have 2 parameter (answer $ i) the i reps the index
@@ -95,19 +102,58 @@ function showQuestion() {
         button.textContent = answer;
         // This appends the child button to the div with variable answerButtonsElement
         answerButtonsElement.appendChild(button);
+
+		button.addEventListener("click", selectAnswer)
+		answerButtonsElement.appendChild(button)
     });
     
 }
 
 
 
-function selectAnswer() {
+function selectAnswer(e) {
+	console.log("i got clicked");
+	const selectedButton = e.target
+	const correct = selectedButton.dataset.correct
+	setStatusClass(document.body, correct)
+	Array.from(answerButtonsElement.children).forEach(button => {
+		setStatusClass(button, button.dataset.correct)
+	})
+	nextButton.classList.remove("hide")
+}
 
+function setStatusClass(element, correct) {
+	clearStatusClass(element)
+	if (correct) {
+		element.classList.add("correct")
+	} else {
+		element.classList.add("wrong")
+	}
+}
+
+function clearStatusClass(element) {
+	element.classList.remove("correct")
+	element.classList.remove("wrong")
 }
 
 
-function resetAnswers() {
 
+
+
+function nextQuestion () {
+	resetState();
+	showQuestion();
+}
+
+
+
+
+function resetState () {
+	nextButton.classList.add("hide");
+	while (answerButtonsElement.firstChild) {
+		answerButtonsElement.removeChild
+		(answerButtonsElement.firstChild)
+	}
 }
 
 
@@ -139,42 +185,42 @@ function viewScoreboard() {
 
 // If answer is correct, continue to next question
 // If answer is wrong, deduct timer
-var timer = 60;
-if (question[0].correctAnswer === "Element") {
+// var timer = 30;
+// if (question[0].correctAnswer === "Element") {
     // go to the next question function should run here
-	currentQuestionIndex++
-} else {
-    var result = timer - 10;
-}
-console.log(result);
+// 	currentQuestionIndex++
+// } else {
+//     var result = timer - 10;
+// }
+// console.log(result);
 
-if (question[1].correctAnswer === 'document.body.style.backgroundColor = ""') {
+// if (question[1].correctAnswer === 'document.body.style.backgroundColor = ""') {
     // go to the next question function should run here
-} else {
-    var result = timer - 10;
-}
-console.log(result);
+// } else {
+//     var result = timer - 10;
+// }
+// console.log(result);
 
-if (question[2].correctAnswer === "Netscape") {
+// if (question[2].correctAnswer === "Netscape") {
     // go to the next question function should run here
-} else {
-    var result = timer - 10;
-}
-console.log(result);
+// } else {
+//     var result = timer - 10;
+// }
+// console.log(result);
 
-if (question[3].correctAnswer === "Concat()") {
+// if (question[3].correctAnswer === "Concat()") {
     // go to the next question function should run here
-} else {
-    var result = timer - 10;
-}
-console.log(result);
+// } else {
+//     var result = timer - 10;
+// }
+// console.log(result);
 
-if (question[4].correctAnswer === "Null") {
+// if (question[4].correctAnswer === "Null") {
     // go to the next question function should run here
-} else {
-    var result = timer - 10;
-}
-console.log(result);
+// } else {
+//     var result = timer - 10;
+// }
+// console.log(result);
 
 
 
