@@ -3,35 +3,35 @@
 // Questions and Answers
 var questions = [
 	{
-		question : "1. Which is not a primitive data type?",
-		answers : ["Number","String", "Boolean", "Element", "Undefined"],
+		question : "Which is not a primitive data type?",
+		answers : ["Number","String", "Element", "Undefined"],
 		correctAnswer: "Element"
 	},
 	{
-		question : "2.  What function is used to change the background color?",
-		answers : ['document.color.background = ""', 'me.backColor = ""', 'document.backgroundColor= ""', 'document.body.style.backgroundColor = ""', 'me.changeColor = """'],
+		question : "What function is used to change the background color?",
+		answers : ['document.color.background = ""', 'document.backgroundColor= ""', 'document.body.style.backgroundColor = ""', 'me.changeColor = """'],
 		correctAnswer: 'document.body.style.backgroundColor = ""'
 	},
     {
-        question : "3. What company developed the scripting language JavaScript?",
-		answers : ["Sun Microsystems", "Microsoft", "Apple", "Mozilla", "Netscape"],
+        question : "What company developed the scripting language JavaScript?",
+		answers : ["Microsoft", "Apple", "Mozilla", "Netscape"],
 		correctAnswer: "Netscape"
     },
     {
-        question : "4. What method is used to join two or more strings?",
-		answers : ["CharAt()", "Concat()", "forEach()", "length()", "push()"],
+        question : "What method is used to join two or more strings?",
+		answers : ["Concat()", "forEach()", "length()", "push()"],
 		correctAnswer: "Concat()"
     },
     {
-        question : "5. What term is used to represent a non-existent or invalid value?",
-		answers : ["var", "Undefined", "Null", "Boolean", "isNAN"],
+        question : "What term is used to represent a non-existent or invalid value?",
+		answers : ["var", "Undefined", "Null", "isNAN"],
 		correctAnswer: "Null"
     }
 ];
 
 
 
-
+// set variables
 var score = 0
 var questionIndex = 0
 
@@ -49,13 +49,17 @@ var timerEl = document.getElementById("timer");
 startButton.addEventListener("click", startQuiz)
 
 function startQuiz() {
-    console.log("I just got clicked")
-	startButton.classList.add("hide")
-	currentQuestionIndex = 0
-	questionContainerElement.classList.remove("hide")
-	startTimer()
-	showQuestion()
+    console.log("I just got clicked");
+	startButton.classList.add("hide");
+	questionIndex = 0;
+	questionContainerElement.classList.remove("hide");
+	questionsAttempted = 0;
+	totalCorrect = 0;
+	startTimer();
+	showQuestion();
+	resetAnswers();
 }
+
 
 function startTimer() {
 	var timeLeft = 30;
@@ -67,27 +71,62 @@ function startTimer() {
 			timerEl.textContent = timeLeft;
 			clearInterval(timeInterval);
 			console.log('GameOver')
-			displayScore()
+			displayScore();
 		}
 	}, 1000);
 } 
 
+
 function showQuestion() {
-	questionElement.innerText = questions[0].question
-	// answerButtonsElement.innerText = questions[0].answers
-	questions.answers.forEach(answer => {
-		const button = document.createElement("button")
-		button.innerText = answers.text
-		button.classList.add("btn")
-	}) 
-	
+    var currentQuestion = questions[questionIndex];
+    var headingElement = document.getElementById("question-heading");
+    headingElement.textContent = currentQuestion.question;
+    answerButtonsElement.innerHTML = "";
+    // answerButtonsElement.innerText = questions[0].answers
+    currentQuestion.answers.forEach(function (answer, i){
+        var button = document.createElement("button")
+        // adding the propety class and the value to tah element in our HTML
+        button.classList.add("class", "answer");
+        // adding our value to the parameter createdd in this function called answer
+        // we have 2 parameter (answer $ i) the i reps the index
+        button.classList.add("value", answer);
+        // concatenate the index number before the array value
+        // so we are concatenating the index and period before each answer
+        button.textContent = answer;
+        // This appends the child button to the div with variable answerButtonsElement
+        answerButtonsElement.appendChild(button);
+    });
+    
 }
+
+
 
 function selectAnswer() {
 
 }
 
+
+function resetAnswers() {
+
+}
+
+
+function gameOver() {
+
+}
+
+
 function displayScore () {
+
+}
+
+
+function submitScore() {
+
+}
+
+
+function viewScoreboard() {
 
 }
 
@@ -103,6 +142,7 @@ function displayScore () {
 var timer = 60;
 if (question[0].correctAnswer === "Element") {
     // go to the next question function should run here
+	currentQuestionIndex++
 } else {
     var result = timer - 10;
 }

@@ -81,6 +81,7 @@ body.wrong {
 
 #timer {
     font-size: 40px;
+    margin-left: 40%;
     bottom: 0;
     position: absolute;
 
@@ -102,17 +103,22 @@ body.wrong {
 } */
 
 
-#question {
+#question-heading {
     text-align: center;
     font-size: 36px;
 }
  
-.buttonGrid {
+/* .buttonGrid {
+    margin: 30px;
+    text-align: center;
+} */
+
+#answerButtons.answer {
     margin: 30px;
     text-align: center;
 }
  
-.btn {
+button {
     border-radius: 12px;
     background-color: #a0a0a0;
     width: 400px;
@@ -126,21 +132,21 @@ body.wrong {
     
 }
  
-.btn:hover {
+button:hover {
     cursor: pointer;
     background-color: #0130ff;
 }
  
-.btn:focus {
+button:focus {
     outline: 0;
 }
  
-.btn.correct {
+button.correct {
     background-color: rgb(2, 226, 58);
     color: black;
 }
 
-.btn.wrong {
+button.wrong {
     background-color: rgb(255, 0, 0);
 }
 
