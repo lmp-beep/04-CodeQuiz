@@ -117,7 +117,6 @@ function generateQuizQuestion() {
 // buttonC.addEventListener("click", userClick)
 // buttonD.addEventListener("click", userClick)
 
-
 // function userClick(event) {
 //     console.log(event.target.id);
 //     if (answer === correct && currentQuestionIndex !== finalQuestionIndex) {
@@ -125,7 +124,6 @@ function generateQuizQuestion() {
 //     } else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex) {
 //         // button turns red
 //     }
-
 // }
 
 

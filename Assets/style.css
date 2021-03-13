@@ -14,12 +14,9 @@ p {
     text-shadow: .5px .5px white;
     text-align: center;
     font-size: xx-large;
-    /* font-family: 'Raleway', sans-serif; */
-    
 }
 
 h2 {
-    /* font-family: 'Raleway', sans-serif; */
     margin-top: -.5rem;
 }
 
@@ -87,7 +84,7 @@ button:focus {
     position: absolute;
     bottom: 0;
     padding-bottom: 20px;
-    width: 100%;
+    margin-left: 37%;
 }
 
 #questionContainer {
