@@ -2,24 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
-    <link rel="stylesheet" href="./Assets/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="./assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
 </head>
-
-
 <body>
-
-    
-
     <div class="container">
-        
+
         <div id="introContainer">
             <h1>Coding Quiz Challenge</h1>
-
             <p class="intro">
                 Answer the following questions within the time limit. 
                 <br>
@@ -28,37 +20,44 @@
                 Incorrect answers will take away points and time off the clock.
             </p>
 
-            <div class="controls">
-                <button id="start-btn" class="start-btn btn">Start Quiz</button>
-            </div>
-        </div>    
 
-        
-
-        <div id="question-container" class="hide">
-            <div id="question">Question</div>
-            <div id="answer-buttons" class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
-
-                
-            </div>
-        
+        <button id="startBtn">Start</button>
+        <button id="startPageHighScore" onclick="showHighScore()">High Scores</button>
         </div>
 
-        <div id="timer"></div>
+        <div id="questionContainer">
+            
+                <div id="question"><p>Questions</p></div>
+                    <button class="answerBtn" id="a" onclick="checkAnswer('a')">A</button>
+                    <button class="answerBtn" id="b" onclick="checkAnswer('b')">B</button>
+                    <button class="answerBtn" id="c" onclick="checkAnswer('c')">C</button>
+                    <button class="answerBtn" id="d" onclick="checkAnswer('d')">D</button>
+                <div id="result"></div>
 
-        <button id="next-btn" class="next-btn btn hide">Next Question</button>
+                <div id="timer">Time left: </div>
+        </div>
+        
+        <div id="gameOver">
 
+            <div id="finalScore"></div>
+            <input type="text" size = "40" placeholder="Enter your name" name="name" id="playerName"/>
+            <button id="submitScoreBtn">Submit Score</button>
+        </div>
+        <div id=highScoreContainer>
+        <div id="highScorePage">
+            <div id="highScoreHeader">
+                <h3>Player</h3>
+                <h3>Score</h3>
+            </div>
+            <div id = "highScoreName"></div>
+            <div id = "highScoreScore"></div>
+        </div>
+        <div id="controls">
+            <button id="playAgain" onclick="replayQuiz()">Play Again</button>
+            <button id="clearHighScore" onclick="clearScore()">Clear Highscores</button>
+        </div>
     </div>
-
-
-
-
-
-
-    <script src="./Assets/script.js"></script>
+    </div>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
