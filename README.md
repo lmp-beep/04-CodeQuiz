@@ -4,10 +4,9 @@ https://lmp-beep.github.io/04-CodeQuiz/
 
 Special Thanks to my tutor Dennis Itua and my TA Matthew Carpenter for helping me get through this!
 
-This assignment was the hardest one yet. I drew a lot of inspiration from youTube and from others posting their quizzes online. 
-
 I originally had some color changing effects that were really neat at first, but then it just got too complicated with the js, so I removed them.
 
+This assignment was the hardest one yet. I drew a lot of inspiration from youTube and from others posting their quizzes online. I actually feel like I copied and pasted a lot more than in previous assignments, which means I understand my code even less. This class gives us no time to absorb what we have learned before moving on to the next lesson. I feel like all I am doing is copying and pasting from other students just to get the assignment done, instead of taking the time to learn what I am doing, even though I spent over 40 hours on this assignment.
 
 
 Known Problems:
