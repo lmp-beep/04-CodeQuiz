@@ -21,4 +21,11 @@ Would have liked to add keyboard event of hitting enter key in addition to click
 
 Would have liked to figure out how to add a modal for the high scores.
 
+<img width="1280" alt="Screen Shot 2021-03-13 at 4 56 43 PM" src="https://user-images.githubusercontent.com/77073582/111051141-ed4c0680-841e-11eb-96f3-11f45b3bb5e2.png">
+
+<img width="1280" alt="Screen Shot 2021-03-13 at 4 56 51 PM" src="https://user-images.githubusercontent.com/77073582/111051143-ede49d00-841e-11eb-9e25-0089ab86ca39.png">
+
+<img width="1280" alt="Screen Shot 2021-03-13 at 4 57 14 PM" src="https://user-images.githubusercontent.com/77073582/111051144-ee7d3380-841e-11eb-9591-1ea868eee2dd.png">
+
+<img width="1280" alt="Screen Shot 2021-03-13 at 4 57 20 PM" src="https://user-images.githubusercontent.com/77073582/111051145-ee7d3380-841e-11eb-8444-e25aa3ab4082.png">
 
